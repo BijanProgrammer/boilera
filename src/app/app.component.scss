@@ -1,0 +1,14 @@
+#app {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    main {
+        flex: 1;
+
+        padding-block: var(--shell--padding);
+    }
+}

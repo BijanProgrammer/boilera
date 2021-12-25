@@ -1,0 +1,10 @@
+<header>
+    <div class="logo">
+        <a routerLinkActive="active" routerLink="/">Boilera</a>
+    </div>
+
+    <div class="icon-wrapper" (click)="themeService.toggleTheme()">
+        <icon-dark-mode class="icon" *ngIf="themeService.theme === Theme.LIGHT"></icon-dark-mode>
+        <icon-light-mode class="icon" *ngIf="themeService.theme === Theme.DARK"></icon-light-mode>
+    </div>
+</header>

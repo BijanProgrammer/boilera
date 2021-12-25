@@ -1,0 +1,192 @@
+// VARIABLES
+:root {
+	--primary-hue: 220;
+	--secondary-hue: 260;
+	--success-hue: 120;
+	--warning-hue: 20;
+	--danger-hue: 0;
+	
+	--color-gray-98: hsl(0, 0%, 98%);
+	--color-gray-90: hsl(0, 0%, 90%);
+	--color-gray-80: hsl(0, 0%, 80%);
+	--color-gray-70: hsl(0, 0%, 70%);
+	--color-gray-40: hsl(0, 0%, 40%);
+	--color-gray-30: hsl(0, 0%, 30%);
+	--color-gray-20: hsl(0, 0%, 20%);
+	--color-gray-10: hsl(0, 0%, 10%);
+	
+	--color--default-background: var(--color-gray-98);
+	--color--default-foreground: var(--color-gray-10);
+	
+	--color--primary: hsl(var(--primary-hue), 100%, 56%);
+	--color--primary-fade: hsl(var(--primary-hue), 100%, 96%);
+	--color--primary-lighter: hsl(var(--primary-hue), 100%, 60%);
+	--color--primary-darker: hsl(var(--primary-hue), 100%, 52%);
+	--color--primary-opposite: var(--color-gray-98);
+	
+	--color--secondary: hsl(var(--secondary-hue), 50%, 50%);
+	--color--secondary-fade: hsl(var(--secondary-hue), 100%, 90%);
+	--color--secondary-lighter: hsl(var(--secondary-hue), 50%, 56%);
+	--color--secondary-darker: hsl(var(--secondary-hue), 50%, 44%);
+	--color--secondary-opposite: var(--color-gray-98);
+	
+	--color--warning: hsl(var(--warning-hue), 100%, 44%);
+	--color--warning-fade: hsl(var(--warning-hue), 100%, 90%);
+	--color--warning-lighter: hsl(var(--warning-hue), 100%, 50%);
+	--color--warning-darker: hsl(var(--warning-hue), 100%, 40%);
+	--color--warning-opposite: var(--color-gray-98);
+	
+	--color--success: hsl(var(--success-hue), 100%, 40%);
+	--color--success-fade: hsl(var(--success-hue), 100%, 92%);
+	--color--success-lighter: hsl(var(--success-hue), 100%, 44%);
+	--color--success-darker: hsl(var(--success-hue), 100%, 36%);
+	--color--success-opposite: var(--color-gray-98);
+	
+	--color--danger: hsl(var(--danger-hue), 100%, 36%);
+	--color--danger-fade: hsl(var(--danger-hue), 100%, 90%);
+	--color--danger-lighter: hsl(var(--danger-hue), 100%, 42%);
+	--color--danger-darker: hsl(var(--danger-hue), 100%, 30%);
+	--color--danger-opposite: var(--color-gray-98);
+	
+	--color--body-background: var(--color--default-background);
+	--color--body-foreground: var(--color--default-foreground);
+	
+	--color--overlay-background: hsla(0, 0%, 0%, 0.94);
+	--color--overlay-foreground: var(--color--default-background);
+	
+	--color--header-logo-background: transparent;
+	--color--header-logo-foreground: inherit;
+	--color--header-logo-background--hover: transparent;
+	--color--header-logo-foreground--hover: hsl(var(--primary-hue), 100%, 60%);
+	
+	--color--nav-link-background: transparent;
+	--color--nav-link-foreground: inherit;
+	--color--nav-link-background--hover: hsl(var(--primary-hue), 0%, 94%);
+	--color--nav-link-foreground--hover: var(--color--header-nav-foreground);
+	--color--nav-link-background--active: var(--color--header-nav-background);
+	--color--nav-link-foreground--active: var(--color--primary);
+	--color--nav-link-background--active-hover: hsl(var(--primary-hue), 50%, 94%);
+	--color--nav-link-foreground--active-hover: var(--color--header-nav-foreground--active);
+	
+	--color--footer-background: hsl(var(--primary-hue), 18%, 16%);
+	--color--footer-foreground: var(--color--default-background);
+	
+	--color--placeholder: var(--color-gray-40);
+	
+	--color--border--fade: var(--color-gray-80);
+	--color--separator: var(--color--border--fade);
+	--color--input-border: var(--color--border--fade);
+	
+	--color--button-disabled-background: var(--color-gray-70);
+	--color--button-disabled-foreground: var(--color--default-foreground);
+	
+	--color--popper-background: var(--color-gray-20);
+	--color--popper-foreground: var(--color--default-background);
+	
+	--color--box-shadow--subtle: hsla(0, 0%, 10%, 12%);
+	--box-shadow--subtle: 0 0.2rem 0.5rem 0 var(--color--box-shadow--subtle);
+	
+	--full-width: 120rem;
+	--full-width-padding-inline: calc(max(100% - var(--full-width), 4rem) / 2);
+	
+	--shell--padding: 2rem;
+	
+	--animation--duration--fast: 0.1s;
+	--animation--duration--normal: 0.5s;
+	--animation--duration--slow: 1s;
+	
+	&.theme--dark {
+		--color--default-background: var(--color-gray-10);
+		--color--default-foreground: var(--color-gray-90);
+		
+		--color--border--fade: var(--color-gray-30);
+		
+		--color--box-shadow--subtle: hsla(0, 0%, 0%, 50%);
+	}
+}
+
+// RESET
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: Poppins, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+
+    border: none;
+    border-radius: 999rem;
+
+    &:not([disabled]) {
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(90%);
+        }
+    }
+
+    &[disabled] {
+        background-color: var(--color--button-disabled-background) !important;
+        color: var(--color--button-disabled-foreground) !important;
+    }
+}
+
+input {
+    &:focus {
+        outline: none;
+    }
+
+    &[type='file'] {
+        display: none;
+    }
+}
+
+img {
+	display: block;
+}
+
+svg {
+    fill: currentColor !important;
+
+    display: block;
+
+    width: 1em !important;
+    height: 1em !important;
+}
+
+// MAIN
+body {
+    background-color: var(--color--body-background);
+    color: var(--color--body-foreground);
+
+    width: 100%;
+	
+	padding-inline: var(--full-width-padding-inline);
+
+    font-size: 1.6rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap, 4rem);
+}
