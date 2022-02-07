@@ -1,14 +1,14 @@
-import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {HomeComponent} from './home/home.component';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
 import {ComponentsModule} from '../components/components.module';
 import {PipesModule} from '../pipes/pipes.module';
-import {RouterModule} from '@angular/router';
+
+import {HomeComponent} from './home/home.component';
 
 @NgModule({
     declarations: [HomeComponent],
-    imports: [CommonModule, PipesModule, ComponentsModule, RouterModule],
+    imports: [CommonModule, RouterModule, ComponentsModule, PipesModule],
 })
 export class PagesModule {}

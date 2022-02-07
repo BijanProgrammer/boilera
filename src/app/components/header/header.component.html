@@ -1,6 +1,6 @@
 <header>
     <div class="logo">
-        <a routerLinkActive="active" routerLink="/">Boilera</a>
+        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Boilera</a>
     </div>
 
     <div class="icon-wrapper" (click)="themeService.toggleTheme()">

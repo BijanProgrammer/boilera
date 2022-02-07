@@ -1,4 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
+
 import {pascalCaseToTitleCase} from '../utils/string.utils';
 
 @Pipe({

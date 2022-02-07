@@ -1,12 +1,13 @@
-import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {WordsToTitleCasePipe} from './words-to-title-case.pipe';
-import {PascalCaseToTitleCasePipe} from './pascal-case-to-title-case.pipe';
+import {NgModule} from '@angular/core';
+
 import {ComponentNameToTitleCasePipe} from './component-name-to-title-case.pipe';
+import {PascalCaseToTitleCasePipe} from './pascal-case-to-title-case.pipe';
+import {WordsToTitleCasePipe} from './words-to-title-case.pipe';
 
 @NgModule({
-    declarations: [WordsToTitleCasePipe, PascalCaseToTitleCasePipe, ComponentNameToTitleCasePipe],
+    declarations: [ComponentNameToTitleCasePipe, PascalCaseToTitleCasePipe, WordsToTitleCasePipe],
     imports: [CommonModule],
-    exports: [WordsToTitleCasePipe, PascalCaseToTitleCasePipe, ComponentNameToTitleCasePipe],
+    exports: [ComponentNameToTitleCasePipe, PascalCaseToTitleCasePipe, WordsToTitleCasePipe],
 })
 export class PipesModule {}
