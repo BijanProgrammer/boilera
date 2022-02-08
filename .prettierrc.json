@@ -19,6 +19,12 @@
             "options": {
                 "parser": "angular"
             }
+        },
+        {
+            "files": ["*.css", "*.scss"],
+            "options": {
+                "singleQuote": false
+            }
         }
     ]
 }
