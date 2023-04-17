@@ -71,20 +71,20 @@
     --color-footer-background: hsl(var(--primary-hue) 18% 16%);
     --color-footer-foreground: var(--color-default-background);
 
-    --color-placeholder: var(--color-gray-40);
-
     --color-border-fade: var(--color-gray-80);
     --color-separator: var(--color-border-fade);
     --color-input-border: var(--color-border-fade);
 
+    --color-button-default-idle-background: var(--color-gray-10);
+    --color-button-default-idle-foreground: var(--color-gray-98);
+    --color-button-default-hover-background: var(--color-gray-20);
     --color-button-disabled-background: var(--color-gray-70);
     --color-button-disabled-foreground: var(--color-default-foreground);
 
-    --color-popper-background: var(--color-gray-20);
-    --color-popper-foreground: var(--color-default-background);
-
     --color-box-shadow-subtle: hsl(0deg 0% 10% / 12%);
     --box-shadow-subtle: 0 0.2rem 0.5rem 0 var(--color-box-shadow-subtle);
+
+    --border-radius: 0.2rem;
 
     --full-width: 120rem;
     --full-width-padding-inline: calc(max(100% - var(--full-width), 4rem) / 2);
@@ -101,6 +101,10 @@
             --color-default-foreground: var(--color-gray-90);
 
             --color-border-fade: var(--color-gray-30);
+
+            --color-button-default-idle-background: var(--color-gray-90);
+            --color-button-default-idle-foreground: var(--color-gray-10);
+            --color-button-default-hover-background: var(--color-gray-98);
 
             --color-box-shadow-subtle: hsl(0deg 0% 0% / 50%);
         }
@@ -150,13 +154,61 @@ button {
     padding: 0.75rem 1.5rem;
 
     border: none;
-    border-radius: 999rem;
+    border-radius: var(--border-radius);
 
     &:not([disabled]) {
+        background-color: var(--color-button-default-idle-background);
+        color: var(--color-button-default-idle-foreground);
+
         cursor: pointer;
 
         &:hover {
-            filter: brightness(90%);
+            background-color: var(--color-button-default-hover-background);
+        }
+
+        &.primary {
+            background-color: var(--color-primary);
+            color: var(--color-primary-opposite);
+
+            &:hover {
+                background-color: var(--color-primary-darker);
+            }
+        }
+
+        &.secondary {
+            background-color: var(--color-secondary);
+            color: var(--color-secondary-opposite);
+
+            &:hover {
+                background-color: var(--color-secondary-darker);
+            }
+        }
+
+        &.success {
+            background-color: var(--color-success);
+            color: var(--color-success-opposite);
+
+            &:hover {
+                background-color: var(--color-success-darker);
+            }
+        }
+
+        &.warning {
+            background-color: var(--color-warning);
+            color: var(--color-warning-opposite);
+
+            &:hover {
+                background-color: var(--color-warning-darker);
+            }
+        }
+
+        &.danger {
+            background-color: var(--color-danger);
+            color: var(--color-danger-opposite);
+
+            &:hover {
+                background-color: var(--color-danger-darker);
+            }
         }
     }
 
@@ -193,8 +245,6 @@ svg {
 body {
     background-color: var(--color-body-background);
     color: var(--color-body-foreground);
-
-    width: 100%;
 
     padding-inline: var(--full-width-padding-inline);
 
